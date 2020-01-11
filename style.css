@@ -4,11 +4,12 @@ body {
       display: flex;
       justify-content: center;
       background: black;
+      font-family: 'Orbitron', sans-serif;
     }
 
     #message-container {
       width: 80%;
-      max-width: 1200px;
+      height: 1vh;
       background: white;
     }
 
@@ -26,8 +27,8 @@ body {
       padding-bottom: 30px;
       bottom: 0;
       background-color: black;
-      max-width: 1200px;
-      width: 80%;
+      width: 50%;
+      height: 2vh;
       display: flex;
     }
 
