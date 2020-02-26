@@ -1,37 +1,39 @@
-body {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      background: black;
-      font-family: 'Orbitron', sans-serif;
-    }
+* {
+    -moz-box-sizing: content-box; 
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 0;
+    border: none;
+    text-align: center;
+    font-size: 5vh;
+    color: white;
+    background: linear-gradient(90deg, rgba(223,226,44,1) 0%, rgba(57,23,204,1) 100%);
+    overflow-y: scroll;
+}
 
-    #message-container {
-      width: 80%;
-      height: 1vh;
-      background: white;
-    }
+#message, #button {
+    z-index: 1;
+    bottom: 0;
+    position: fixed;
+    height: 10vh;
+}
 
-    #message-container div {
-      background-color: yellow;
-      padding: 5px;
-    }
+#message {
+    background: darkblue;
+    left: 0;
+    width: 80vw;
+}
 
-    #message-container div:nth-child(2n) {
-      background-color: #FFF;
-    }
+#button {
+    background: blue;
+    right: 0;
+    width: 20vw;
+}
 
-    #send-container {
-      position: fixed;
-      padding-bottom: 30px;
-      bottom: 0;
-      background-color: black;
-      width: 50%;
-      height: 2vh;
-      display: flex;
-    }
+div:hover {
+    background: red;
+}
 
-    #message-input {
-      flex-grow: 1;
-    }
+#messages {
+    height: 90vh;
+}
