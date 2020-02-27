@@ -32,11 +32,13 @@
 
 #delete {
     background: black;
+    font-size: 0.97;
 }
 
-div:hover {
-    transition: 60s;
+#button:hover {
     background: red;
+    transition: transform 1s;
+    transform: scale(0.8);
 }
 
 #messages {
