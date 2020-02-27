@@ -4,7 +4,7 @@
     margin: 0;
     border: none;
     text-align: center;
-    font-size: 3vh;
+    font-size: vh;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     background: linear-gradient(90deg, rgba(223,226,44,1) 0%, rgba(57,23,204,1) 100%);
@@ -42,5 +42,5 @@
 }
 
 #messages {
-    height: 90vh;
+    height: 80vh;
 }
