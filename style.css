@@ -5,6 +5,7 @@
     border: none;
     text-align: center;
     font-size: 5vh;
+    font-family: 'Courier New', Courier, monospace;
     color: white;
     background: linear-gradient(90deg, rgba(223,226,44,1) 0%, rgba(57,23,204,1) 100%);
     overflow-y: scroll;
@@ -29,8 +30,13 @@
     width: 20vw;
 }
 
+#delete {
+    background: black;
+}
+
 div:hover {
-    background: red;
+    font-size: 5.5vh;
+    transition: 0.5s;
 }
 
 #messages {

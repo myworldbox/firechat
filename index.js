@@ -12,7 +12,30 @@ firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-alias = prompt("Alias");
+alias = prompt("這是一個聯天室的示範項目，未來有時間作者會更新。\nThis is a demo of chatroom application; provided I have enough time, I will update it.\n\n請輸入你的名字：\nEnter your alias:");
+
+// listen for incoming messages
+firebase.database().ref("messages").on("child_added", function (snapshot) {
+    html = "";
+    // give each message a unique ID
+    html += "<div id='message-" + snapshot.key + "'>";
+    // show delete button if message is sent by me
+    if (snapshot.val().sender == alias) {
+        html += "<button id='delete' data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>✕</button>";
+    }
+    html += snapshot.val().sender + ": " + snapshot.val().message;
+    html += "</div>";
+
+    document.getElementById("messages").innerHTML += html;
+    element = document.getElementById("message-" + snapshot.key);
+    element.scrollIntoView();
+});
+
+// attach listener for delete message
+firebase.database().ref("messages").on("child_removed", function (snapshot) {
+    // remove message node
+    document.getElementById("message-" + snapshot.key).innerHTML = "Removed";
+});
 
 function sendMessage() {
     // get message
@@ -23,27 +46,9 @@ function sendMessage() {
         "sender": alias,
         "message": message
     });
-
     // prevent form from submitting
     return false;
 }
-
-// listen for incoming messages
-firebase.database().ref("messages").on("child_added", function (snapshot) {
-    html = "";
-    // give each message a unique ID
-    html += "<div id='message-" + snapshot.key + "'>";
-    // show delete button if message is sent by me
-    if (snapshot.val().sender == alias) {
-        html += "<button data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>";
-        html += "✕";
-        html += "</button>";
-    }
-    html += snapshot.val().sender + ": " + snapshot.val().message;
-    html += "</div>";
-
-    document.getElementById("messages").innerHTML += html;
-});
 
 function deleteMessage(self) {
     // get message ID
@@ -52,9 +57,3 @@ function deleteMessage(self) {
     // delete message
     firebase.database().ref("messages").child(messageId).remove();
 }
-
-// attach listener for delete message
-firebase.database().ref("messages").on("child_removed", function (snapshot) {
-    // remove message node
-    document.getElementById("message-" + snapshot.key).innerHTML = "Removed";
-});
