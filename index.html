@@ -14,9 +14,9 @@
 </head>
 
 <body>
-<form id="form" onclick="return sendMessage();">
+<form id="form">
     <input id="message" placeholder="Say something" autocomplete="off">
-    <div id="button">⇠</div>
+    <div id="button" onclick='return sendMessage();'>⇠</div>
 </form>
 
 <div id="messages"></div>

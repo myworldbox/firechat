@@ -35,8 +35,8 @@
 }
 
 div:hover {
-    font-size: 5.5vh;
-    transition: 0.5s;
+    transition: 60s;
+    background: red;
 }
 
 #messages {

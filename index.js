@@ -25,7 +25,6 @@ firebase.database().ref("messages").on("child_added", function (snapshot) {
     }
     html += snapshot.val().sender + ": " + snapshot.val().message;
     html += "</div>";
-
     document.getElementById("messages").innerHTML += html;
     element = document.getElementById("message-" + snapshot.key);
     element.scrollIntoView();
@@ -46,6 +45,7 @@ function sendMessage() {
         "sender": alias,
         "message": message
     });
+
     // prevent form from submitting
     return false;
 }
