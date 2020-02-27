@@ -26,8 +26,6 @@ firebase.database().ref("messages").on("child_added", function (snapshot) {
     html += snapshot.val().sender + ": " + snapshot.val().message;
     html += "</div>";
     document.getElementById("messages").innerHTML += html;
-    element = document.getElementById("message-" + snapshot.key);
-    element.scrollIntoView();
 });
 
 // attach listener for delete message
@@ -45,7 +43,10 @@ function sendMessage() {
         "sender": alias,
         "message": message
     });
-
+    firebase.database().ref("messages").on("child_added", function(snapshot) {
+        element = document.getElementById("message-" + snapshot.key);
+        element.scrollIntoView();
+    });
     // prevent form from submitting
     return false;
 }

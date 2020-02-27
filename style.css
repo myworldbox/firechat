@@ -4,7 +4,7 @@
     margin: 0;
     border: none;
     text-align: center;
-    font-size: 5vh;
+    font-size: 3vh;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     background: linear-gradient(90deg, rgba(223,226,44,1) 0%, rgba(57,23,204,1) 100%);
@@ -37,7 +37,7 @@
 
 #button:hover {
     background: red;
-    transition: transform 1s;
+    transition: transform 2s;
     transform: scale(0.8);
 }
 
