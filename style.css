@@ -1,8 +1,4 @@
 * {
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none;
     -webkit-appearance: none;
     box-sizing: content-box;
     margin: 0;
