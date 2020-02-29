@@ -1,12 +1,17 @@
 * {
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
     -webkit-appearance: none;
     box-sizing: content-box;
     margin: 0;
     border: none;
     text-align: center;
-    font-size: vh;
+    font-size: 2vw;
+    padding: 1vh 1vh 1vh 1vh;
     font-family: 'Courier New', Courier, monospace;
-    color: white;
+    color: lightblue;
     background: linear-gradient(90deg, rgba(223,226,44,1) 0%, rgba(57,23,204,1) 100%);
     overflow-y: scroll;
 }
@@ -15,13 +20,13 @@
     z-index: 1;
     bottom: 0;
     position: fixed;
-    height: 10vh;
+    height: 5vh;
 }
 
 #message {
     background: darkblue;
     left: 0;
-    width: 80vw;
+    width: 78vw;
 }
 
 #button {
@@ -30,12 +35,7 @@
     width: 20vw;
 }
 
-#delete {
-    background: black;
-    font-size: 0.97;
-}
-
-#button:hover {
+#delete:hover, #button:hover {
     background: red;
     transition: transform 2s;
     transform: scale(0.8);
@@ -43,4 +43,20 @@
 
 #messages {
     height: 80vh;
+}
+
+#messages, #delete {
+  animation-name: animation_1;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+}
+
+@keyframes animation_1 {
+  0% {
+    background: rgb(255,255,255);
+  }
+  100% {
+    background: rgb(0,0,0);
+  }
 }
