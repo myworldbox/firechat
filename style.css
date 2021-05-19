@@ -62,7 +62,7 @@ div {
 
 #messages {
   overflow-y: scroll;
-  height: 25em;
+  height: 20em;
 }
 
 #delete {
