@@ -17,6 +17,7 @@ body {
 }
 
 .topic {
+    padding: 0.5em 0.5em 0.5em 0.5em;
   background: black;
   border-style: solid;
   border-color: palegreen;
@@ -39,6 +40,7 @@ div {
   z-index: 1;
   bottom: 0;
   height: 1em;
+  width: 5em;
 }
 
 #message,
@@ -48,7 +50,6 @@ div {
 }
 
 #button {
-  width: 8em;
   color: white;
   background: blue;
 }
@@ -62,7 +63,7 @@ div {
 
 #messages {
   overflow-y: scroll;
-  height: 20em;
+  height: 50vh;
 }
 
 #delete {
