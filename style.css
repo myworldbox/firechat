@@ -1,47 +1,80 @@
 * {
-    -webkit-appearance: none;
-    box-sizing: content-box;
-    margin: 0;
-    border: none;
-    text-align: center;
-    font-size: 1.1em;
-    padding: 1vh 1vh 1vh 1vh;
-    font-family: 'Courier New', Courier, monospace;
-    color: lightblue;
-    background: linear-gradient(90deg, rgba(223,226,44,1) 0%, rgba(57,23,204,1) 100%);
-    overflow-y: scroll;
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  margin: 0;
+  border: none;
+  text-align: center;
+  font-size: 1em;
+  padding: 1em 1em 1em 1em;
+  font-family: "Courier New", Courier, monospace;
+  color: lightblue;
+  background: black;
+  overflow: hidden;
 }
 
-#message, #button {
-    z-index: 1;
-    bottom: 0;
-    position: fixed;
-    height: 5vh;
+body {
+  white-space: pre;
 }
 
-#message {
-    background: darkblue;
-    left: 0;
-    width: 78vw;
+.topic {
+  background: black;
+  border-style: solid;
+  border-color: palegreen;
+}
+
+div {
+  color: yellow;
+  background: red;
+}
+
+#form {
+  width:fit-content; 
+  background: white;
+  display: flex;
+  height: 20%;
+}
+
+#message,
+#button {
+  z-index: 1;
+  bottom: 0;
+  height: 1em;
+}
+
+#message,
+::placeholder {
+  color: white;
+  left: 0;
 }
 
 #button {
-    background: blue;
-    right: 0;
-    width: 20vw;
+  width: 8em;
+  color: white;
+  background: blue;
 }
 
-#delete:hover, #button:hover {
-    background: red;
-    transition: transform 2s;
-    transform: scale(0.8);
+#delete:hover,
+#button:hover {
+  color: black;
+  background: yellow;
+  transition: transform 2s;
 }
 
 #messages {
-    height: 80vh;
+  overflow-y: scroll;
+  height: 25em;
 }
 
-#messages, #delete {
+#delete {
+  border-radius: 30%;
+  animation-name: animation_1;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+}
+
+#messages {
+  border-radius: 5%;
   animation-name: animation_1;
   animation-direction: alternate;
   animation-iteration-count: infinite;
@@ -50,9 +83,9 @@
 
 @keyframes animation_1 {
   0% {
-    background: rgb(255,255,255);
+    background: rgb(255, 255, 255);
   }
   100% {
-    background: rgb(0,0,0);
+    background: rgb(0, 0, 0);
   }
 }

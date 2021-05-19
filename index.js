@@ -12,7 +12,8 @@ firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-alias = prompt("這是一個聯天室的示範項目，未來有時間作者會更新。\nThis is a demo of chatroom application; provided I have enough time, I will update it.\n\n請輸入你的名字：\nEnter your alias:");
+
+alias = prompt("This is * FireChat * chatroom\n\nCopyright© 2020. VL blockchain.\nhttps://myworldbox.github.io/\n\nPlease enter your alias:");
 
 // listen for incoming messages
 firebase.database().ref("messages").on("child_added", function (snapshot) {
