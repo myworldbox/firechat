@@ -5,7 +5,7 @@
   border: none;
   text-align: center;
   font-size: 1em;
-  padding: 1em 1em 1em 1em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
   font-family: "Courier New", Courier, monospace;
   color: lightblue;
   background: black;
@@ -17,19 +17,20 @@ body {
 }
 
 .topic {
-    padding: 0.5em 0.5em 0.5em 0.5em;
   background: black;
   border-style: solid;
   border-color: palegreen;
 }
 
-div {
+#messages div {
+  width: 100%;
+  overflow: scroll;
   color: yellow;
   background: red;
 }
 
 #form {
-  width:fit-content; 
+  width: fit-content;
   background: white;
   display: flex;
   height: 20%;
